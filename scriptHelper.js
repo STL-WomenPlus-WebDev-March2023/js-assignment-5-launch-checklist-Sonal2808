@@ -59,7 +59,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   document.getElementById('copilotStatus').innerHTML = `Co-pilot: ${copilot}`;
   // Reset faultyItems visibility and launchStatus text and color
   list.style.visibility = 'hidden';
-  document.getElementById('launchStatus').innerHTML = 'Awaiting Information Before Launch';
+  document.getElementById('launchStatus').textContent = 'Awaiting Information Before Launch';
   document.getElementById('launchStatus').style.color = '';
   // Check fuel level
   if (fuelLevel < 10000) {
@@ -92,7 +92,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
   // Reset the form
   console.log('Form submitted successfully.');
-  document.getElementById('testForm').reset();
+  document.getElementById('LaunchForm').reset();
 }
 /*function showAlert(message) {
   const alertElement = document.getElementById('alert');
