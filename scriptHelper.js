@@ -33,25 +33,25 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
   const pilotValidation = validateInput(pilot);
   if (pilotValidation === 'Empty') {
-    alert('Please enter a pilot name.');
+    console.log('Please enter a pilot name.');
     return;
   }
   // Validate co-pilot name
   const coPilotValidation = validateInput(copilot);
   if (coPilotValidation === 'Empty') {
-    alert('Please enter a co-pilot name.');
+    console.log('Please enter a co-pilot name.');
     return;
   }
   // Validate fuel level
   const fuelValidation = validateInput(fuelLevel);
   if (fuelValidation !== 'Is a Number') {
-    alert('Please enter a valid fuel level.');
+    console.log('Please enter a valid fuel level.');
     return;
   }
   // Validate cargo mass
   const cargoValidation = validateInput(cargoLevel);
   if (cargoValidation !== 'Is a Number') {
-    alert('Please enter a valid cargo mass.');
+    console.log('Please enter a valid cargo mass.');
     return;
   }
   // Update shuttle requirements
@@ -91,10 +91,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   // ...
 
   // Reset the form
-  
+  console.log('Form submitted successfully.');
   document.getElementById('testForm').reset();
 }
-
+/*function showAlert(message) {
+  const alertElement = document.getElementById('alert');
+  alertElement.style.display = 'block';
+  alertElement.innerHTML = message;
+}*/
 async function myFetch() {
     let planetsReturned;
 
@@ -110,14 +114,9 @@ function pickPlanet(planets) {
   return planets[index];
 }
 
-/*module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 module.exports.pickPlanet = pickPlanet; 
 module.exports.myFetch = myFetch;
-*/
-window.addDestinationInfo = addDestinationInfo;
-window.validateInput = validateInput;
-window.formSubmission = formSubmission;
-window.pickPlanet = pickPlanet;
-window.myFetch = myFetch;
+

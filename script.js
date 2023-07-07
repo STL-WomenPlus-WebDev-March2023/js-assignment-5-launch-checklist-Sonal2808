@@ -1,15 +1,11 @@
 // Write your JavaScript code here!
-//import {validateInput, formSubmission, myFetch, pickPlanet,addDestinationInfo} from './scriptHelper.js';
 window.addEventListener("load", function() {
-
   let listedPlanets;
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-  let listedPlanetsResponse= myFetch();
-  listedPlanetsResponse.then(function (result) {
+   myFetch().then(function (result) {
       listedPlanets = result;
       console.log(listedPlanets);
   }).then(function () {
-      console.log(listedPlanets);
       const randomPlanet = pickPlanet(listedPlanets);
       addDestinationInfo(
         document,
