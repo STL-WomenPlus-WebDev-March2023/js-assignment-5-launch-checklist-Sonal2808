@@ -27,11 +27,9 @@ function validateInput(value) {
     }
   }
   
-
-
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
-  const pilotValidation = validateInput(pilot);
+   const pilotValidation = validateInput(pilot);
   if (pilotValidation === 'Empty') {
     console.log('Please enter a pilot name.');
     return;
@@ -87,12 +85,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     document.getElementById('launchStatus').style.color = 'green';
   }
 
-  // Perform other actions with the validated data
-  // ...
-
-  // Reset the form
-  console.log('Form submitted successfully.');
-  document.getElementById('launchForm').reset();
+    console.log('Form submitted successfully.');
+  document.getElementById('LaunchForm').reset();
 }
 /*function showAlert(message) {
   const alertElement = document.getElementById('alert');
