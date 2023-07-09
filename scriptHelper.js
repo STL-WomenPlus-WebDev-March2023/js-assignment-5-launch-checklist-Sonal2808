@@ -19,8 +19,10 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 function validateInput(value) {
       if (value === '') {
+        showAlert('Please enter a value.');
       return 'Empty';
     } else if (isNaN(Number(value))) {
+      showAlert('Please enter a valid number.');
       return 'Not a Number';
     } else {
       return 'Is a Number';
@@ -88,9 +90,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     console.log('Form submitted successfully.');
   formSubmission();
 }
-/*function showAlert(message) {
+function showAlert(message) {
   alert(message);
-}*/
+}
 async function myFetch() {
     let planetsReturned;
 
