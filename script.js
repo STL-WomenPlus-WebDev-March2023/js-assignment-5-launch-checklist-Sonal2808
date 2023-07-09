@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
 
     const list = document.getElementById('faultyItems');
     const pilot = document.getElementById('pilotName').value;
-    const copilot = document.getElementById('coPilotName').value;
+    const copilot = document.getElementById('copilotName').value;
     const fuelLevel = document.getElementById('fuelLevel').value;
     const cargoLevel = document.getElementById('cargoMass').value;
 
