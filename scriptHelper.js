@@ -18,7 +18,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(value) {
-      if (value === '') {
+      if (value == '') {
         showAlert('Please enter a value.');
       return 'Empty';
     } else if (isNaN(Number(value))) {
@@ -31,25 +31,25 @@ function validateInput(value) {
   
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
-   const pilotValidation = validateInput(pilot);
+   let pilotValidation = validateInput(pilot);
   if (pilotValidation === 'Empty') {
     console.log('Please enter a pilot name.');
     return;
   }
   // Validate co-pilot name
-  const coPilotValidation = validateInput(copilot);
+  let coPilotValidation = validateInput(copilot);
   if (coPilotValidation === 'Empty') {
     console.log('Please enter a co-pilot name.');
     return;
   }
   // Validate fuel level
-  const fuelValidation = validateInput(fuelLevel);
+  let fuelValidation = validateInput(fuelLevel);
   if (fuelValidation !== 'Is a Number') {
     console.log('Please enter a valid fuel level.');
     return;
   }
   // Validate cargo mass
-  const cargoValidation = validateInput(cargoLevel);
+  let cargoValidation = validateInput(cargoLevel);
   if (cargoValidation !== 'Is a Number') {
     console.log('Please enter a valid cargo mass.');
     return;

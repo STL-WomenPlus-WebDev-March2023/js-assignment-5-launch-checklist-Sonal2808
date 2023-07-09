@@ -20,16 +20,17 @@ window.addEventListener("load", function() {
       );
       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
   });
-  document.getElementById('formSubmit').addEventListener('click', function(event) {
+  let button = document.getElementById("formSubmit");
+  button.addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
-    const list = document.getElementById('faultyItems');
-    const pilot = document.getElementById('pilotName').value;
-    const copilot = document.getElementById('copilotName').value;
-    const fuelLevel = document.getElementById('fuelLevel').value;
-    const cargoLevel = document.getElementById('cargoMass').value;
+    let list = document.getElementById('faultyItems');
+    let pilot = document.getElementById('pilotName').value;
+    let copilot = document.getElementById('copilotName').value;
+    let fuelLevel = document.getElementById('fuelLevel').value;
+    let cargoLevel = document.getElementById('cargoMass').value;
 
-    studentFunctions.formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+  formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
  // Call the formSubmission function with the updated parameters
 
     // Add logic to select a random planet from the listedPlanets array
