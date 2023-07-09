@@ -29,25 +29,25 @@ function validateInput(value) {
   
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
-   const pilotValidation = validateInput("chris");
+   const pilotValidation = validateInput(pilot);
   if (pilotValidation === 'Empty') {
     showAlert('Please enter a pilot name.');
     return;
   }
   // Validate co-pilot name
-  const coPilotValidation = validateInput("Bob");
+  const coPilotValidation = validateInput(copilot);
   if (coPilotValidation === 'Empty') {
     showAlert('Please enter a co-pilot name.');
     return;
   }
   // Validate fuel level
-  const fuelValidation = validateInput(0);
+  const fuelValidation = validateInput(fuelLevel);
   if (fuelValidation !== 'Is a Number') {
     showAlert('Please enter a valid fuel level.');
     return;
   }
   // Validate cargo mass
-  const cargoValidation = validateInput(5);
+  const cargoValidation = validateInput(cargoLevel);
   if (cargoValidation !== 'Is a Number') {
     showAlert('Please enter a valid cargo mass.');
     return;
@@ -86,7 +86,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   }
 
     console.log('Form submitted successfully.');
-  document.getElementById('launchForm').reset();
+  document.getElementById('testForm').reset();
 }
 /*function showAlert(message) {
   alert(message);
