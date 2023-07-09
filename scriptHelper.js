@@ -29,25 +29,25 @@ function validateInput(value) {
   
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
-   const pilotValidation = validateInput(pilot);
+   const pilotValidation = validateInput("chris");
   if (pilotValidation === 'Empty') {
     showAlert('Please enter a pilot name.');
     return;
   }
   // Validate co-pilot name
-  const coPilotValidation = validateInput(copilot);
+  const coPilotValidation = validateInput("Bob");
   if (coPilotValidation === 'Empty') {
     showAlert('Please enter a co-pilot name.');
     return;
   }
   // Validate fuel level
-  const fuelValidation = validateInput(fuelLevel);
+  const fuelValidation = validateInput(0);
   if (fuelValidation !== 'Is a Number') {
     showAlert('Please enter a valid fuel level.');
     return;
   }
   // Validate cargo mass
-  const cargoValidation = validateInput(cargoLevel);
+  const cargoValidation = validateInput(5);
   if (cargoValidation !== 'Is a Number') {
     showAlert('Please enter a valid cargo mass.');
     return;
