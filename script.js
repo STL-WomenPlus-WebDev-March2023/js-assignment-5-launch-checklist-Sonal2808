@@ -29,7 +29,7 @@ window.addEventListener("load", function() {
     const fuelLevel = document.getElementById('fuelLevel').value;
     const cargoLevel = document.getElementById('cargoMass').value;
 
-    studentFunctions.formSubmission(window.document, document.getElementById('testForm'), "Chris", "Bob", 0, 5);
+    studentFunctions.formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
  // Call the formSubmission function with the updated parameters
 
     // Add logic to select a random planet from the listedPlanets array
