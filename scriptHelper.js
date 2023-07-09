@@ -31,25 +31,25 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
    const pilotValidation = validateInput(pilot);
   if (pilotValidation === 'Empty') {
-    showAlert('Please enter a pilot name.');
+    console.log('Please enter a pilot name.');
     return;
   }
   // Validate co-pilot name
   const coPilotValidation = validateInput(copilot);
   if (coPilotValidation === 'Empty') {
-    showAlert('Please enter a co-pilot name.');
+    console.log('Please enter a co-pilot name.');
     return;
   }
   // Validate fuel level
   const fuelValidation = validateInput(fuelLevel);
   if (fuelValidation !== 'Is a Number') {
-    showAlert('Please enter a valid fuel level.');
+    console.log('Please enter a valid fuel level.');
     return;
   }
   // Validate cargo mass
   const cargoValidation = validateInput(cargoLevel);
   if (cargoValidation !== 'Is a Number') {
-    showAlert('Please enter a valid cargo mass.');
+    console.log('Please enter a valid cargo mass.');
     return;
   }
   // Update shuttle requirements
