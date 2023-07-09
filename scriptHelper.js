@@ -91,7 +91,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   formSubmission();
 }
 function showAlert(message) {
-  alert(message);
+  console.error(message);
 }
 async function myFetch() {
     let planetsReturned;
