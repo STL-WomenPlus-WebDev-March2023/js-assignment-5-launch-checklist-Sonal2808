@@ -31,25 +31,25 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
    const pilotValidation = validateInput(pilot);
   if (pilotValidation === 'Empty') {
-    console.log('Please enter a pilot name.');
+    showAlert('Please enter a pilot name.');
     return;
   }
   // Validate co-pilot name
   const coPilotValidation = validateInput(copilot);
   if (coPilotValidation === 'Empty') {
-    console.log('Please enter a co-pilot name.');
+    showAlert('Please enter a co-pilot name.');
     return;
   }
   // Validate fuel level
   const fuelValidation = validateInput(fuelLevel);
   if (fuelValidation !== 'Is a Number') {
-    console.log('Please enter a valid fuel level.');
+    showAlert('Please enter a valid fuel level.');
     return;
   }
   // Validate cargo mass
   const cargoValidation = validateInput(cargoLevel);
   if (cargoValidation !== 'Is a Number') {
-    console.log('Please enter a valid cargo mass.');
+    showAlert('Please enter a valid cargo mass.');
     return;
   }
   // Update shuttle requirements
@@ -89,9 +89,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   document.getElementById('launchForm').reset();
 }
 function showAlert(message) {
-  const alertElement = document.getElementById('alert');
-  alertElement.style.display = 'block';
-  alertElement.innerHTML = message;
+  alert(message);
 }
 async function myFetch() {
     let planetsReturned;
