@@ -86,13 +86,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   }
 
     console.log('Form submitted successfully.');
-  document.getElementById('LaunchForm').reset();
+  document.getElementById('launchForm').reset();
 }
-/*function showAlert(message) {
+function showAlert(message) {
   const alertElement = document.getElementById('alert');
   alertElement.style.display = 'block';
   alertElement.innerHTML = message;
-}*/
+}
 async function myFetch() {
     let planetsReturned;
 
