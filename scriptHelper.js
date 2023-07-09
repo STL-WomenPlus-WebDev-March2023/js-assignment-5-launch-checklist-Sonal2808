@@ -92,7 +92,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
   // Reset the form
   console.log('Form submitted successfully.');
-  document.getElementById('LaunchForm').reset();
+  document.getElementById('LaunchForm');
 }
 /*function showAlert(message) {
   const alertElement = document.getElementById('alert');
