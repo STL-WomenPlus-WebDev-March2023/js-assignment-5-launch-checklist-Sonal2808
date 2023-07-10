@@ -47,13 +47,13 @@ let cargoStatus = document.getElementById("cargoStatus");
 cargoStatus.innerHTML = `${cargoLevel} Cargo mass low enough for launch`;
 let launchStatus = document.getElementById("launchStatus")
 launchStatus.innerHTML = "shuttle ready for launch!";
-launchStatus.style.color = "green";
+launchStatus.style.color = 'green';
    
 if(fuelLevel <10000) {
   list.style.visibility = "visible";
   let launchStatus = document.getElementById("launchStatus");
 launchStatus.innerHTML = "Shuttle not ready for launch";
-launchStatus.style.color = "red";
+launchStatus.style.color = 'red';
 fuelStatus.innerHTML = `${fuelLevel} Fuel level too low for launch`;
 
 }
@@ -61,7 +61,7 @@ if(cargoLevel >10000) {
   list.style.visibility = "visible";
   let launchStatus = document.getElementById("launchStatus");
 launchStatus.innerHTML = "Shuttle not ready for launch";
-launchStatus.style.color = "red";
+launchStatus.style.color = 'red';
 cargoStatus.innerHTML = `${cargoLevel} Cargo mass too heavy for launch`;
 }
 }
