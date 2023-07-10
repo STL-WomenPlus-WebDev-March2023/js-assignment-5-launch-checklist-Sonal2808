@@ -45,6 +45,7 @@ let fuelStatus = document.getElementById("fuelStatus");
 fuelStatus.innerHTML =`${fuelLevel} Fuel level high enough for launch`;
 let cargoStatus = document.getElementById("cargoStatus");
 cargoStatus.innerHTML = `${cargoLevel} cargo mass low enough for launch`;
+let launchStatus = document.getElementById("launchStatus")
 launchStatus.innerHTML = "shuttle is ready for launch!";
 launchStatus.style.color = "green";
    
