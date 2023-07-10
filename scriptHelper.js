@@ -29,64 +29,42 @@ function validateInput(testInput) {
   
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    // Validate pilot name
-   let pilotValidation = validateInput(pilot);
-  if (pilotValidation === 'Empty') {
-    console.log('Please enter a pilot name.');
-    return;
-  }
-  // Validate co-pilot name
-  let coPilotValidation = validateInput(copilot);
-  if (coPilotValidation === 'Empty') {
-    console.log('Please enter a co-pilot name.');
-    return;
-  }
-  // Validate fuel level
-  let fuelValidation = validateInput(fuelLevel);
-  if (fuelValidation !== 'Is a Number') {
-    console.log('Please enter a valid fuel level.');
-    return;
-  }
-  // Validate cargo mass
-  let cargoValidation = validateInput(cargoLevel);
-  if (cargoValidation !== 'Is a Number') {
-    console.log('Please enter a valid cargo mass.');
-    return;
-  }
-  // Update shuttle requirements
-  document.getElementById('pilotStatus').innerHTML = `Pilot: ${pilot}`;
-  document.getElementById('copilotStatus').innerHTML = `Co-pilot: ${copilot}`;
-  // Reset faultyItems visibility and launchStatus text and color
-  list.style.visibility = 'hidden';
-  document.getElementById('launchStatus').textContent = 'Awaiting Information Before Launch';
-  document.getElementById('launchStatus').style.color = '';
-  // Check fuel level
-  if (fuelLevel < 10000) {
-    list.style.visibility = 'visible';
-    document.getElementById('fuelStatus').innerHTML = 'Fuel level too low for launch';
-    document.getElementById('launchStatus').innerHTML = 'Shuttle not ready for launch';
-    document.getElementById('launchStatus').style.color = 'red';
-  } else {
-    document.getElementById('fuelStatus').innerHTML = 'Fuel level high enough for launch';
-  }
+   if(validateInput(pilot)=== "Empty" || validateInput(copilot)=== "Empty" || validateInput(fuelLevel)){
+   alert("All fields are required!");
+   } else if (validateInput(pilot)=== "Is a Number" || validateInput(copilot)=== "Is a Number" || validateInput(fuelLevel)) {
+ alert("Make sure to enter valid information for each field!");
 
-  // Check cargo mass
-  if (cargoLevel > 10000) {
-    list.style.visibility = 'visible';
-    document.getElementById('cargoStatus').innerHTML = 'Cargo mass too high for launch';
-    document.getElementById('launchStatus').innerHTML = 'Shuttle not ready for launch';
-    document.getElementById('launchStatus').style.color = 'red';
-  } else {
-    document.getElementById('cargoStatus').innerHTML = 'Cargo mass low enough for launch';
-  }
+  
+   } else {
+list.style.visibility = "visible"
+let pilotStatus = document.getElementById("pilotStatus");
+pilotStatus.innerHTML = `${pilot} is ready for liftoff`;
+let copilotStatus = document.getElementById("copilotStatus");
+copilotStatus.innerHTML = `${copilot} is ready for liftoff`;
+let fuelStatus = document.getElementById("fuelStatus");
+fuelStatus.innerHTML =`${fuelLevel} Fuel level high enough for launch`;
+let cargoStatus = document.getElementById("cargoStatus");
+cargoStatus.innerHTML = `${cargoLevel} cargo mass low enough for launch`;
+launchStatus.innerHTML = "shuttle is ready for launch!";
+launchStatus.style.color = "green";
+   
+if(fuelLevel <10000) {
+  list.style.visibility = "visible";
+  let launchStatus = document.getElementById("launchStatus");
+launchStatus.innerHTML = "Shuttle is not ready for launch";
+launchStatus.style.color = "red";
+fuelStatus.innerHTML = `${fuelLevel} Fuel level too low for launch!`;
 
-  // Check if shuttle is ready for launch
-  if (list.style.visibility !== 'visible') {
-    document.getElementById('launchStatus').innerHTML = 'Shuttle is ready for launch';
-    document.getElementById('launchStatus').style.color = 'green';
-  }
-
-   }
- 
+}
+if(cargoLevel >10000) {
+  list.style.visibility = "visible";
+  let launchStatus = document.getElementById("launchStatus");
+launchStatus.innerHTML = "Shuttle is not ready for launch";
+launchStatus.style.color = "red";
+cargoStatus.innerHTML = `${cargoLevel} Cargo mass too heavy for launch!`;
+}
+}
+}
 async function myFetch() {
     let planetsReturned;
 
