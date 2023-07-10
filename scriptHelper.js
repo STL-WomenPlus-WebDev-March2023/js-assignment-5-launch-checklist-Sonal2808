@@ -33,7 +33,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert("Enter correct input type!");
     } else{
         //alert("Everything is fine");
-       // list.style.visibility = "visible";
+        list.style.visibility = "hidden";
         let pilotStatus = document.getElementById("pilotStatus");
             pilotStatus.innerHTML = `${pilot} is ready for liftoff`;
         let copilotStatus = document.getElementById("copilotStatus");

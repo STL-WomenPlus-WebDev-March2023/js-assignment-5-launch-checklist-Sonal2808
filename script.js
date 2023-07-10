@@ -18,7 +18,7 @@ window.addEventListener("load", function() {
        addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
    })
    let list = document.getElementById("faultyItems"); 
-   //list.style.visibility = "hidden";
+   list.style.visibility = "hidden";
    // TO DO: Work on list for Flight Requirements/ Faulty Equipment
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
