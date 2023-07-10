@@ -28,10 +28,10 @@ function validateInput(testInput) {
   }
   
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   // Validate pilot name
-   if(validateInput(pilot)=== "Empty" || validateInput(copilot)=== "Empty" || validateInput(fuelLevel)){
+  
+   if(validateInput(pilot)=== "Empty" || validateInput(copilot)=== "Empty" || validateInput(fuelLevel)==="Empty" || validateInput(cargoLevel) === "Empty") {
    alert("All fields are required!");
-   } else if (validateInput(pilot)=== "Is a Number" || validateInput(copilot)=== "Is a Number" || validateInput(fuelLevel)) {
+   } else if (validateInput(pilot)=== "Is a Number" || validateInput(copilot)=== "Is a Number" || validateInput(fuelLevel)!== "Is a Number" || validateInput(cargoLevel)!== "Is a Number") {
  alert("Make sure to enter valid information for each field!");
 
   

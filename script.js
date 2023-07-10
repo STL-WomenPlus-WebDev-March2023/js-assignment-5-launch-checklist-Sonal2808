@@ -1,3 +1,5 @@
+//const { formSubmission } = require("./scriptHelper");
+
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
   document.getElementById('faultyItems').style.visibility = 'hidden';
@@ -33,7 +35,7 @@ window.addEventListener("load", function() {
     let fuel = fuelLevel.value;
     let cargoMass = document.querySelector("input[name=cargoMass]");
     let cargo = cargoMass.value;
-
+formSubmission(doucment, list, pilot, copilot, fuel, cargo);
   
  // Call the formSubmission function with the updated parameters
 
