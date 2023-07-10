@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   const missionTarget = document.getElementById('missionTarget');
+   let missionTarget = document.getElementById('missionTarget');
   missionTarget.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
@@ -17,15 +17,13 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    `;
 }
 
-function validateInput(value) {
-      if (value == '') {
-        showAlert('Please enter a value.');
-      return 'Empty';
-    } else if (isNaN(Number(value))) {
-      showAlert('Please enter a valid number.');
-      return 'Not a Number';
+function validateInput(testInput) {
+      if ( testInput=== "") {
+        return "Empty";
+         } else if (isNaN(Number(testInput))== true) {
+            return "Not a Number";
     } else {
-      return 'Is a Number';
+      return "Is a Number";
     }
   }
   
@@ -87,12 +85,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     document.getElementById('launchStatus').style.color = 'green';
   }
 
-    console.log('Form submitted successfully.');
-  formSubmission();
-}
-function showAlert(message) {
-  console.error(message);
-}
+   }
+ 
 async function myFetch() {
     let planetsReturned;
 

@@ -1,13 +1,13 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function() {
   document.getElementById('faultyItems').style.visibility = 'hidden';
-  let listedPlanets;
+  let listedPlanets=myFetch();
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    myFetch().then(function (result) {
       listedPlanets = result;
       console.log(listedPlanets);
   }).then(function () {
-      const randomPlanet = pickPlanet(listedPlanets);
+      let randomPlanet = pickPlanet(listedPlanets);
       addDestinationInfo(
         document,
       randomPlanet.name,
@@ -20,17 +20,21 @@ window.addEventListener("load", function() {
       );
       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
   });
-  let button = document.getElementById("formSubmit");
-  button.addEventListener('click', function(event) {
+  let list = document.getElementById("faultyItems");
+  let form=document.querySelector("form");
+  form.addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
 
-    let list = document.getElementById('faultyItems');
-    let pilot = document.getElementById('pilotName').value;
-    let copilot = document.getElementById('copilotName').value;
-    let fuelLevel = document.getElementById('fuelLevel').value;
-    let cargoLevel = document.getElementById('cargoMass').value;
+   let pilotName = document.querySelector("input[name=pilotName]");
+   let pilot = pilotName.value;
+    let copilotName = document.querySelector("input[name=copilotName]");
+    let copilot = pilotName.value;
+    let fuelLevel = document.valuequerySelector("input[name=fuelLevel]");
+    let fuel = fuelLevel.value;
+    let cargoMass = document.querySelector("input[name=cargoMass]");
+    let cargo = cargoMass.value;
 
-  formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+  
  // Call the formSubmission function with the updated parameters
 
     // Add logic to select a random planet from the listedPlanets array
