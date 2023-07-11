@@ -5,24 +5,27 @@
 //const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-
-  let listedPlanets; 
-  
-  let listedPlanetsResponse= myFetch();
-  listedPlanetsResponse.then(function (result) {
-      listedPlanets = result;
-     // console.log(listedPlanets);
+  //document.getElementById('faultyItems').style.visibility = 'hidden';
+let planets;
+   let planetsReturned= myFetch();
+  myFetch().then(function (result) {
+    planets = result;
+     //console.log(listedPlanets);
   }).then(function () {
      // console.log(listedPlanets);
-       let planet = pickPlanet(listedPlanets);
-       addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
-   })
+       let randomPlanet = pickPlanet(planets);
+       addDestinationInfo(document, randomPlanet.name, randomPlanet.diameter, randomPlanet.star, randomPlanet.distance, randomPlanet.moons, randomPlanet.image);
+   });
    let list = document.getElementById("faultyItems"); 
    list.style.visibility = "hidden";
-   // TO DO: Work on list for Flight Requirements/ Faulty Equipment
-   let form = document.querySelector("form");
+   let form = docment.querySelector("form");
    form.addEventListener("submit", function(event) {
-       event.preventDefault();
+    event.preventDefault();
+   //list.style.visibility = "hidden";
+   // TO DO: Work on list for Flight Requirements/ Faulty Equipment
+   //let form = document.querySelector("form");
+   //form.addEventListener("submit", function(event) {
+     //  event.preventDefault();
        let pilotName = document.querySelector("input[name=pilotName]");
        let pilot = pilotName.value;
        let copilotName = document.querySelector("input[name=copilotName]");
