@@ -110,12 +110,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             fuelStatus.innerHTML = `${fuelLevel} liters is adequate`;
         let cargoStatus = document.getElementById("cargoStatus");
                     cargoStatus.innerHTML = `${cargoLevel} kg is safe for travel`;
-            h2.textContent = "Shuttle is Rready for Launch";
+                let launchStatus = document.getElementById("launchStatus");
+            launchStatus.innerHTML = "Shuttle is Ready for Launch";
                     launchStatus.style.color = "green"; 
         if(fuelLevel < 10000) {
             list.style.visibility = "visible";
             let launchStatus = document.getElementById("launchStatus");
-                launchStatus.innerHTML = "Shuttle not ready for launch";
+                launchStatus.innerHTML = "Shuttle not Ready for launch";
                 launchStatus.style.color = "red";
             fuelStatus.innerHTML = `${fuelLevel} liters is not enough fuel for the journey!`;
             }
@@ -123,7 +124,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         if(cargoLevel > 10000) {
             list.style.visibility = "visible";
             let launchStatus = document.getElementById("launchStatus");
-                launchStatus.innerHTML = "Shuttle not ready for launch";
+                launchStatus.innerHTML = "Shuttle not Ready for launch";
                 launchStatus.style.color = "red";
             cargoStatus.innerHTML = `${cargoLevel} kg is too heckin thicc for the journey!`;
             }
