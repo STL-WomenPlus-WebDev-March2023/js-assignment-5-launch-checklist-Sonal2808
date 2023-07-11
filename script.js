@@ -6,6 +6,7 @@
 
 window.addEventListener("load", function() {
 
+  
   let listedPlanets; 
   
   let listedPlanetsResponse= myFetch();
@@ -31,6 +32,7 @@ window.addEventListener("load", function() {
        let fuel = fuelLevel.value;
        let cargoMass = document.querySelector("input[name=cargoMass]");
        let cargo = cargoMass.value;
+       
        formSubmission(document, list, pilot, copilot, fuel, cargo);
      })
  });
