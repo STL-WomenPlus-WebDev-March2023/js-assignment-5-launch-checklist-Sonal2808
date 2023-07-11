@@ -34,5 +34,6 @@ window.addEventListener("load", function() {
        let cargo = cargoMass.value;
        
        formSubmission(document, list, pilot, copilot, fuel, cargo);
+       
      })
  });
