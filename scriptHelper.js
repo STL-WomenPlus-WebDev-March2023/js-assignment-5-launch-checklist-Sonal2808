@@ -33,7 +33,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else if(validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number") {
         alert("Enter correct input type!");
                 //alert("Everything is fine");
-        list.style.visibility = "visible";
+        //list.style.visibility = "visible";
         let pilotStatus = document.getElementById("pilotStatus");
             pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         let copilotStatus = document.getElementById("copilotStatus");
